@@ -10,7 +10,7 @@ jobs:
   build-test-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: LedgerHQ/python-lib-action@v2
+      - uses: LedgerHQ/internal-actions/python-lib@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PYPI_PUSH_TOKEN: ${{ secrets.PYPI_DEPLOY_TOKEN }}
