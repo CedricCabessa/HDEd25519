@@ -1,0 +1,17 @@
+name: Test and Publish
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build-test-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: LedgerHQ/python-lib-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PYPI_PUSH_TOKEN: ${{ secrets.PYPI_DEPLOY_TOKEN }}
+        with:
+          python-version: 3.9
